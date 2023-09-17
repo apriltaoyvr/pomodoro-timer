@@ -2,15 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
-    @apply dark:bg-slate-950 bg-slate-200; 
+    @apply bg-slate-200 dark:bg-slate-950;
+  }
+
+  p {
+    @apply max-w-prose leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  small {
+    @apply text-sm font-medium leading-none;
+  }
+}
+
+@layer components {
+  .tabs_content {
+    @apply data-[state="inactive"]:hidden p-4;
+  }
+
+  .tabs_content > span {
+    @apply scroll-m-20 text-5xl font-semibold tracking-tight;
   }
 }
 
 @layer utilities {
   .center {
     @apply place-content-center place-items-center;
+  }
+
+  .muted {
+    @apply text-sm text-slate-800 dark:text-slate-300;
   }
 }
